@@ -1,0 +1,18 @@
+@Path("widgets")
+public class WidgetsResource {
+    @GET
+    @Path("offers")
+    public WidgetList getDiscounted() {...}
+
+    @Path("{id}")
+    public WidgetResource findWidget(@PathParam("id") String id) {
+        return new WidgetResource(id);
+    }
+}
+
+public class WidgetResource {
+    public WidgetResource(String id) {...}
+
+    @GET
+    public Widget getDetails() {...}
+}
